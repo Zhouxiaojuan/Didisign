@@ -1,0 +1,14 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!--颜色角度-->
+    <!--中部颜色-->
+    <!--结束颜色-->
+    <!--起始颜色-->
+    <!--排列类型-->
+    <gradient
+        android:angle="135"
+        android:centerColor="#bff9ee"
+        android:endColor="#6bb7a6"
+        android:startColor="#6bb7a6"
+        android:type="linear" />
+</shape>
