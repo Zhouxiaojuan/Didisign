@@ -5,7 +5,7 @@
     android:padding="10dp"
     android:background="@drawable/side_nav_bar">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="youxing@xx.com"
+        android:text="@string/user_mail"
         android:textSize="14sp"
         android:textColor="#fff"
         android:layout_alignParentBottom="true"
@@ -25,8 +25,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ID:"
-        android:textSize="14sp"
+        android:text="@string/uesr_name"
+        android:textSize="20sp"
         android:textColor="#fff"
         android:layout_above="@+id/user_mesg"
         android:id="@+id/user_id" />
