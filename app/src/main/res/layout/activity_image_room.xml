@@ -60,6 +60,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_margin="5dp"
+        android:background="#e1e1e1"
         android:orientation="horizontal">
 
         <EditText
@@ -67,9 +68,11 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="5"
-            android:maxLength="10"
+            android:maxLength="8"
             android:maxLines="1"
-            android:hint="新标签"/>
+            android:lines="1"
+
+            android:hint="新标签(最多8个字符)"/>
 
         <Button
             android:id="@+id/imageroom_addbtn"

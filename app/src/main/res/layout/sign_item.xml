@@ -5,12 +5,11 @@
     android:layout_height="wrap_content"
     android:id="@+id/sign_cardview"
     android:layout_margin="5dp"
-    app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="?attr/colorPrimaryDark">
+    app:cardCornerRadius="5dp">
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:id="@+id/imageroom_sign"
         android:gravity="center"
 

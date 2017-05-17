@@ -6,11 +6,20 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="ImagepageTheme" parent="AppTheme">
         <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="TransLucentTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="OverflowMenuStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="overlapAnchor">false</item>  <!--设置不覆盖锚点-->
     </style>
 
 </resources>
