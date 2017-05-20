@@ -15,6 +15,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.peanut.jinbiao.Adapters.FragmentAdapter;
@@ -39,24 +41,36 @@ public class MainActivity extends AppCompatActivity {
 
     private Fragment_pager_2 fragmentPager2=new Fragment_pager_2();
 
+    private View navheadview;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         replaceFragment(fragment_pager1);
-//        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        ActionBar actionBar=getSupportActionBar();
-//        if (actionBar!=null){
-//            actionBar.setDisplayHomeAsUpEnabled(true);
-//            actionBar.setHomeAsUpIndicator(R.drawable.icon_menu32_white);
-//        }
+        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar=getSupportActionBar();
+        if (actionBar!=null){
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setHomeAsUpIndicator(R.drawable.icon_menu32_white);
+        }
 
 
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         drawerLayout= (DrawerLayout) findViewById(R.id.activity_main);
+        navheadview=navigationView.inflateHeaderView(R.layout.nav_header);
 
+        CircleImageView circleImageView= (CircleImageView) navheadview.findViewById(R.id.user_image);
+
+        circleImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(MainActivity.this,UserCenter.class);
+                startActivity(intent1);
+            }
+        });
 
         //设置默认点击第一个
         navigationView.setCheckedItem(R.id.today);
@@ -65,10 +79,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem item) {
                 int id = item.getItemId();
                 switch (id){
-                    case R.id.usercenter:
-                        Intent intent1=new Intent(MainActivity.this,UserCenter.class);
-                        startActivity(intent1);
-                        break;
                     case R.id.today:
                         replaceFragment(fragment_pager1);
                         Log.d("sd", "onNavigationItemSelected: 112313");
@@ -96,17 +106,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-//    //设置菜单监听事件
-//    public boolean onCreateOptionsMenu(Menu menu){
-//        getMenuInflater().inflate(R.menu.toolbar,menu);
-//        return true;
-//    }
 
 
     public void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.pager_content,fragment).commit();
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.toolbar,menu);
+        return true;
     }
 
 

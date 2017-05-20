@@ -7,8 +7,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_image"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_margin="15dp"
         android:src="@drawable/tx11"
         android:layout_centerVertical="true"/>
@@ -16,19 +16,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/user_mail"
+        android:text="积分："
+        android:textColor="#fff"
+        android:id="@+id/jifen"
+        android:layout_below="@+id/user_id"
+        android:layout_toEndOf="@+id/user_image" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="这个人很懒，什么也没留下"
         android:textSize="14sp"
         android:textColor="#fff"
-        android:layout_alignParentBottom="true"
-        android:id="@+id/user_mesg" />
+        android:id="@+id/user_mesg"
+        android:layout_below="@+id/user_image"
+        android:layout_alignStart="@+id/user_image"
+        android:layout_marginTop="11dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/uesr_name"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textColor="#fff"
-        android:layout_above="@+id/user_mesg"
-        android:id="@+id/user_id" />
+        android:id="@+id/user_id"
+        android:layout_alignTop="@+id/user_image"
+        android:layout_toEndOf="@+id/user_image" />
 
 </RelativeLayout>

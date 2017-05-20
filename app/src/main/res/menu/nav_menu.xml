@@ -7,10 +7,6 @@
             android:icon="@drawable/icon_star32_black"
             android:title="待标记"/>
         <item
-            android:id="@+id/usercenter"
-            android:title="个人中心"
-            android:icon="@drawable/icon_moderator32_black"/>
-        <item
             android:id="@+id/task"
             android:icon="@drawable/icon_heart32_black"
             android:title="今日任务"/>
@@ -18,6 +14,10 @@
             android:id="@+id/yestoday"
             android:icon="@drawable/icon_star32_black"
             android:title="已标记"/>
+
+    </group>
+    <group>
+
         <item
             android:id="@+id/settting"
             android:icon="@drawable/icon_setting32_black"
@@ -28,4 +28,6 @@
             android:title="Exit"/>
 
     </group>
+
+
 </menu>

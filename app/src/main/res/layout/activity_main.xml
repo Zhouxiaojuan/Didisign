@@ -6,31 +6,34 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <FrameLayout
-        android:id="@+id/pager_content"
+
+
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </FrameLayout>
 
-    <!--<android.support.design.widget.CoordinatorLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-        <!--<android.support.design.widget.AppBarLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="wrap_content">-->
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="?attr/colorPrimaryDark"
+                android:theme="@style/OverflowMenuStyle"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                />
+            <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
+        </android.support.design.widget.AppBarLayout>
 
-            <!--<android.support.v7.widget.Toolbar-->
-                <!--android:id="@+id/toolbar"-->
-                <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="50dp"-->
-                <!--android:background="?attr/colorPrimaryDark"-->
-                <!--android:theme="@style/OverflowMenuStyle"-->
-                <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
-                <!--/>-->
-            <!--&lt;!&ndash;app:layout_scrollFlags="scroll|enterAlways|snap"&ndash;&gt;-->
-        <!--</android.support.design.widget.AppBarLayout>-->
 
+        <FrameLayout
+            android:id="@+id/pager_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="50dp">
+        </FrameLayout>
         <!--&lt;!&ndash;<android.support.v4.widget.SwipeRefreshLayout&ndash;&gt;-->
             <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
             <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
@@ -59,17 +62,16 @@
                 <!--&lt;!&ndash;android:layout_height="match_parent" />&ndash;&gt;-->
 
         <!--&lt;!&ndash;</android.support.v4.widget.SwipeRefreshLayout>&ndash;&gt;-->
-    <!--</android.support.design.widget.CoordinatorLayout>-->
+    </android.support.design.widget.CoordinatorLayout>
 
 
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:menu="@menu/nav_menu"
-        app:headerLayout="@layout/nav_header"
         android:fitsSystemWindows="true">
     </android.support.design.widget.NavigationView>
 
