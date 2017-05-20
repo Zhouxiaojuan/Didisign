@@ -86,7 +86,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_menu_gallery"
+        android:src="@drawable/icon_star32_black"
         android:id="@+id/image_floatBar"
         app:layout_anchor="@id/imageroom_appbar"
         app:layout_anchorGravity="bottom|end"/>

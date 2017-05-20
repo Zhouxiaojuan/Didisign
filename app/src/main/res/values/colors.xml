@@ -3,4 +3,7 @@
     <color name="colorPrimary">#fc6f68</color>
     <color name="colorPrimaryDark">#fcb07d</color>
     <color name="colorAccent">#6082f2</color>
+    <color name="black">#000</color>
+    <color name="Touming">#0000</color>
+    <color name="white">#fff</color>
 </resources>

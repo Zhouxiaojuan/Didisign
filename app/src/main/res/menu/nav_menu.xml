@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <group android:checkableBehavior="single">
-
         <item
-            android:id="@+id/camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="camera"/>
+            android:id="@+id/today"
+            android:icon="@drawable/icon_star32_black"
+            android:title="待标记"/>
         <item
-            android:id="@+id/share"
-            android:icon="@drawable/ic_menu_share"
-            android:title="share"/>
+            android:id="@+id/usercenter"
+            android:title="个人中心"
+            android:icon="@drawable/icon_moderator32_black"/>
+        <item
+            android:id="@+id/task"
+            android:icon="@drawable/icon_heart32_black"
+            android:title="今日任务"/>
+        <item
+            android:id="@+id/yestoday"
+            android:icon="@drawable/icon_star32_black"
+            android:title="已标记"/>
+        <item
+            android:id="@+id/settting"
+            android:icon="@drawable/icon_setting32_black"
+            android:title="设置"/>
         <item
             android:id="@+id/out"
-            android:icon="@drawable/ic_menu_send"
+            android:icon="@drawable/icon_arrow64_black"
             android:title="Exit"/>
 
     </group>

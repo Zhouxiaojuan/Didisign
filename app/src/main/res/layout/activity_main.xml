@@ -6,55 +6,60 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <android.support.design.widget.CoordinatorLayout
+    <FrameLayout
+        android:id="@+id/pager_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+    </FrameLayout>
 
-        <android.support.design.widget.AppBarLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+    <!--<android.support.design.widget.CoordinatorLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="?attr/colorPrimaryDark"
-                android:theme="@style/OverflowMenuStyle"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                />
-            <!--app:layout_scrollFlags="scroll|enterAlways|snap"-->
-        </android.support.design.widget.AppBarLayout>
-
-        <!--<android.support.v4.widget.SwipeRefreshLayout-->
+        <!--<android.support.design.widget.AppBarLayout-->
             <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/listrefresh"-->
-            <!--app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
-            <!--&gt;-->
+            <!--android:layout_height="wrap_content">-->
 
-            <FrameLayout
-                android:id="@+id/main_context"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="50dp">
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/viewpager_like"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="50dp">
-
-                </android.support.v4.view.ViewPager>
-
-            </FrameLayout>
-
-            <!--<android.support.v7.widget.RecyclerView-->
-                <!--android:id="@+id/recyclerview"-->
+            <!--<android.support.v7.widget.Toolbar-->
+                <!--android:id="@+id/toolbar"-->
                 <!--android:layout_width="match_parent"-->
-                <!--android:layout_height="match_parent" />-->
+                <!--android:layout_height="50dp"-->
+                <!--android:background="?attr/colorPrimaryDark"-->
+                <!--android:theme="@style/OverflowMenuStyle"-->
+                <!--app:popupTheme="@style/ThemeOverlay.AppCompat.Light"-->
+                <!--/>-->
+            <!--&lt;!&ndash;app:layout_scrollFlags="scroll|enterAlways|snap"&ndash;&gt;-->
+        <!--</android.support.design.widget.AppBarLayout>-->
 
-        <!--</android.support.v4.widget.SwipeRefreshLayout>-->
-    </android.support.design.widget.CoordinatorLayout>
+        <!--&lt;!&ndash;<android.support.v4.widget.SwipeRefreshLayout&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/listrefresh"&ndash;&gt;-->
+            <!--&lt;!&ndash;app:layout_behavior="@string/appbar_scrolling_view_behavior"&ndash;&gt;-->
+            <!--&lt;!&ndash;&gt;&ndash;&gt;-->
+            <!--<LinearLayout-->
+                <!--android:id="@+id/main_content"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_marginTop="50dp">-->
+
+                <!--<android.support.v4.view.ViewPager-->
+                    <!--android:id="@+id/viewpager_like"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent">-->
+                <!--</android.support.v4.view.ViewPager>-->
+
+            <!--</LinearLayout>-->
+
+
+
+            <!--&lt;!&ndash;<android.support.v7.widget.RecyclerView&ndash;&gt;-->
+                <!--&lt;!&ndash;android:id="@+id/recyclerview"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+                <!--&lt;!&ndash;android:layout_height="match_parent" />&ndash;&gt;-->
+
+        <!--&lt;!&ndash;</android.support.v4.widget.SwipeRefreshLayout>&ndash;&gt;-->
+    <!--</android.support.design.widget.CoordinatorLayout>-->
 
 
 
