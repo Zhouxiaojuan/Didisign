@@ -15,9 +15,12 @@ public class FragmentAdapter extends FragmentPagerAdapter{
 
     private List<Fragment> fragmentList;
 
-    public FragmentAdapter(FragmentManager fm,List<Fragment> fragments) {
+    private List<String> titlelist;
+
+    public FragmentAdapter(FragmentManager fm,List<Fragment> fragments,List<String> titles) {
         super(fm);
         fragmentList=fragments;
+        titlelist=titles;
     }
 
     @Override
@@ -28,5 +31,10 @@ public class FragmentAdapter extends FragmentPagerAdapter{
     @Override
     public int getCount() {
         return fragmentList.size();
+    }
+
+    @Override
+    public CharSequence getPageTitle(int postion){
+        return titlelist.get(postion);
     }
 }

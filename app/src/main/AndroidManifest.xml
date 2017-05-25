@@ -15,8 +15,7 @@
             android:theme="@style/TransLucentTheme" />
         <activity
             android:name=".Activity.ImageRoom"
-            android:theme="@style/TransLucentTheme"
-            android:windowSoftInputMode="stateVisible|adjustPan" />
+            android:theme="@style/TransLucentTheme" />
         <activity
             android:name=".Activity.LoginPager"
             android:theme="@style/TransLucentTheme">
@@ -29,7 +28,8 @@
         <activity
             android:name=".Activity.SignupPager"
             android:theme="@style/TransLucentTheme" />
-        <activity android:name=".Activity.UserCenter"></activity>
+        <activity android:name=".Activity.UserCenter" />
+        <activity android:name=".Activity.LabelingPage"></activity>
     </application>
 
 </manifest>

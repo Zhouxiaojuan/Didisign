@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,20 +15,12 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.peanut.jinbiao.Adapters.FragmentAdapter;
 import com.example.peanut.jinbiao.Pagers.Fragment_pager1;
 import com.example.peanut.jinbiao.Pagers.Fragment_pager_2;
-import com.example.peanut.jinbiao.RecycleView_fragment.Fragment_all;
-import com.example.peanut.jinbiao.RecycleView_fragment.Fragment_kind1;
-import com.example.peanut.jinbiao.RecycleView_fragment.Fragment_like;
 import com.example.peanut.jinbiao.R;
 import com.example.peanut.jinbiao.test.Helper;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -102,10 +93,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             }
         });
-
-
     }
-
 
 
     public void replaceFragment(Fragment fragment){

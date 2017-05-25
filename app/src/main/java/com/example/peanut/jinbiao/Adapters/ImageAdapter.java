@@ -74,4 +74,8 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public ImageAdapter(List<Images> touxiangList){
         mImagelist=touxiangList;
     }
+
+    public List<Images> getImageList(){
+        return mImagelist;
+    }
 }

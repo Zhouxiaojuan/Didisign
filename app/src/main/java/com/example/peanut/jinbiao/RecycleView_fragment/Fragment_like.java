@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.peanut.jinbiao.Adapters.ImageAdapter;
+import com.example.peanut.jinbiao.test.Helper;
 import com.example.peanut.jinbiao.test.Images;
 import com.example.peanut.jinbiao.R;
 
@@ -22,6 +23,7 @@ import java.util.Random;
  */
 
 public class Fragment_like extends Fragment {
+
     private ImageAdapter imgadapter;
 
     private com.example.peanut.jinbiao.test.Images[] Images={
@@ -44,13 +46,13 @@ public class Fragment_like extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view=inflater.inflate(R.layout.fragment_like,container,false);
 
-        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview);
+        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview_like);
         GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(layoutManager);
         imgadapter = new ImageAdapter(ImagesList);
         recyclerView.setAdapter(imgadapter);
 
-        swipeRefreshLayout= (SwipeRefreshLayout)view.findViewById(R.id.listrefresh);
+        swipeRefreshLayout= (SwipeRefreshLayout)view.findViewById(R.id.listrefresh_like);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -63,24 +65,6 @@ public class Fragment_like extends Fragment {
     }
 
     private void refreshList(){
-//        new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-//                try {
-//                    Thread.sleep(2000);
-//                } catch (InterruptedException e) {
-//                    e.printStackTrace();
-//                }
-//                new Thread(new Runnable() {
-//                    @Override
-//                    public void run() {
-//                        initTx();
-//                        imgadapter.notifyDataSetChanged();
-//                        swipeRefreshLayout.setRefreshing(false);
-//                    }
-//                });
-//            }
-//        }).start();
         initTx();
         imgadapter.notifyDataSetChanged();
         swipeRefreshLayout.setRefreshing(false);
@@ -94,4 +78,6 @@ public class Fragment_like extends Fragment {
             ImagesList.add(Images[index]);
         }
     }
+
+
 }

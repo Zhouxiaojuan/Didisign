@@ -55,40 +55,53 @@
 
     </android.support.v4.widget.NestedScrollView>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        android:layout_margin="5dp"
-        android:background="#e1e1e1"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/imageroom_addtip"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_weight="5"
-            android:maxLength="8"
-            android:maxLines="1"
-            android:lines="1"
-
-            android:hint="新标签(最多8个字符)"/>
-
-        <Button
-            android:id="@+id/imageroom_addbtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="add"/>
-    </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/multiple_actions_down"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:src="@drawable/icon_star32_black"
-        android:id="@+id/image_floatBar"
-        app:layout_anchor="@id/imageroom_appbar"
-        app:layout_anchorGravity="bottom|end"/>
+        android:clickable="true"
+        app:fab_addButtonColorNormal="@color/colorPrimary"
+        app:fab_addButtonColorPressed="@color/colorPrimaryDark"
+        app:fab_addButtonPlusIconColor="#fff"
+        app:fab_addButtonSize="normal"
+        app:fab_expandDirection="up"
+        app:theme="@style/menu_labels_style"
+        android:layout_gravity="bottom|right"
+        >
+
+
+        <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="16dp"-->
+        <!--android:src="@drawable/icon_star32_black"-->
+        <!--android:id="@+id/image_floatBar"-->
+        <!--app:layout_anchor="@id/imageroom_appbar"-->
+        <!--app:layout_anchorGravity="bottom|end"/>-->
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/xinbiaoqian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rippleColor="@color/colorPrimaryDark"
+            app:theme="@style/menu_labels_style"
+            android:scaleType="fitCenter"
+            app:fab_colorNormal="@color/colorPrimary"
+            />
+
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/chakanyuantu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:rippleColor="#bebebe"
+            app:fab_colorNormal="#fff"
+            app:fab_colorPressed="#bebebe"
+            />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+
 
 </android.support.design.widget.CoordinatorLayout>

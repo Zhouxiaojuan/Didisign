@@ -18,10 +18,10 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by Peanut on 2017/5/15.
+ * Created by Peanut on 2017/5/21.
  */
 
-public class Fragment_all extends Fragment{
+public class Fragment_jianzhu extends Fragment {
 
     private ImageAdapter imgadapter;
 
@@ -38,21 +38,21 @@ public class Fragment_all extends Fragment{
 
     private List<Images> ImagesList=new ArrayList<>();
 
-    public Fragment_all(){
+    public Fragment_jianzhu(){
         initTx();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View view=inflater.inflate(R.layout.fragment_all,container,false);
+        View view=inflater.inflate(R.layout.fragment_jianzhu,container,false);
 
-        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview_all);
+        RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview_jianzhu);
         GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),2);
         recyclerView.setLayoutManager(layoutManager);
         imgadapter = new ImageAdapter(ImagesList);
         recyclerView.setAdapter(imgadapter);
 
-        swipeRefreshLayout= (SwipeRefreshLayout)view.findViewById(R.id.listrefresh_all);
+        swipeRefreshLayout= (SwipeRefreshLayout)view.findViewById(R.id.listrefresh_jianzhu);
         swipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -77,5 +77,4 @@ public class Fragment_all extends Fragment{
             ImagesList.add(Images[index]);
         }
     }
-
 }
