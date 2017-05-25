@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1=new Intent(MainActivity.this,UserCenter.class);
+                intent1.putExtra(UserCenter.IMAGE_top,R.drawable.tx);
                 startActivity(intent1);
             }
         });
@@ -83,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.out:
                         Intent intent6 = new Intent(MainActivity.this, LoginPager.class);
+                        intent6.putExtra("isbcak",true);
                         getHelper().setIsauto(false);
                         startActivity(intent6);
                         finish();

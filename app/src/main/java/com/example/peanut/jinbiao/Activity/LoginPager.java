@@ -44,6 +44,7 @@ public class LoginPager extends AppCompatActivity {
         if (actionBar!=null){
             actionBar.hide();
         }
+
         preferences= PreferenceManager.getDefaultSharedPreferences(this);
         editor=preferences.edit();
 
@@ -77,8 +78,8 @@ public class LoginPager extends AppCompatActivity {
         accountEdit.setText(account);
 
         //若来自注销，重置文件中的自动登录的boolean值
-        if (!isback){
-            editor.putBoolean("auto_login",false);
+        if (isback){
+            autoLogin.setChecked(false);
         }
 
         //判断是否记住密码，自动登录，或是注销
@@ -94,17 +95,17 @@ public class LoginPager extends AppCompatActivity {
             }
         }
         //记住密码checkbox监听事件
-        rememberPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (rememberPass.isChecked()){
-                    editor.putBoolean("remember_password",true);
-                }else {
-                    editor.putBoolean("remember_password",false);
-                }
-                editor.apply();
-            }
-        });
+//        rememberPass.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+//                if (rememberPass.isChecked()){
+//                    editor.putBoolean("remember_password",true);
+//                }else {
+//                    editor.putBoolean("remember_password",false);
+//                }
+//                editor.apply();
+//            }
+//        });
         //自动登录checkbox监听事件
         autoLogin.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

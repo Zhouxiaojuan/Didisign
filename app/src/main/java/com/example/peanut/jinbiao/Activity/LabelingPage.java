@@ -22,7 +22,7 @@ public class LabelingPage extends AppCompatActivity {
 
     private ImageView[] imageViews;
 
-    private int[] Imageids=getHelper().getimageids();
+//    private int[] Imageids=getHelper().getimageids();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +33,11 @@ public class LabelingPage extends AppCompatActivity {
         int postion=intent.getIntExtra("postion",0);
         viewPager= (ViewPager) findViewById(R.id.labeling_viewpage);
         imageViews=new ImageView[50];
-        for (int i=0;i<50;i++){
-            Random random=new Random();
-            int index=random.nextInt(Imageids.length);
-            imageViews[index].setImageResource(Imageids[index]);
-        }
+//        for (int i=0;i<50;i++){
+//            Random random=new Random();
+//            int index=random.nextInt(Imageids.length);
+//            imageViews[index].setImageResource(Imageids[index]);
+//        }
 
         labelImageAdapter=new LabelImageAdapter(imageViews);
         viewPager.setAdapter(labelImageAdapter);
