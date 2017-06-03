@@ -22,16 +22,16 @@
         android:layout_below="@+id/user_id"
         android:layout_toEndOf="@+id/user_image" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="这个人很懒，什么也没留下"
-        android:textSize="14sp"
-        android:textColor="#fff"
-        android:id="@+id/user_mesg"
-        android:layout_below="@+id/user_image"
-        android:layout_alignStart="@+id/user_image"
-        android:layout_marginTop="11dp" />
+    <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="这个人很懒，什么也没留下"-->
+        <!--android:textSize="14sp"-->
+        <!--android:textColor="#fff"-->
+        <!--android:id="@+id/user_mesg"-->
+        <!--android:layout_below="@+id/user_image"-->
+        <!--android:layout_alignStart="@+id/user_image"-->
+        <!--android:layout_marginTop="11dp" />-->
 
     <TextView
         android:layout_width="wrap_content"

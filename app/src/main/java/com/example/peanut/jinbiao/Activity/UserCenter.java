@@ -2,24 +2,26 @@ package com.example.peanut.jinbiao.Activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.peanut.jinbiao.R;
+import com.example.peanut.jinbiao.test.Helper;
 
 public class UserCenter extends AppCompatActivity{
 
-    public static final String UserCenter="UserCenter";
+    public static final String UserCenter=" ";
 
     public static final String IMAGE_top="imag_top";
 
@@ -27,16 +29,16 @@ public class UserCenter extends AppCompatActivity{
     private SharedPreferences.Editor editor;
 
     private ImageView touxiang;
+    private String TAG="Main";
 
     private Button nicheng;
+    private Button mail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_center);
         init();
-//        Intent intent=getIntent();
-//        int imageid=intent.getIntExtra(IMAGE_top,0);
         touxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -47,8 +49,16 @@ public class UserCenter extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 Intent intent1=new Intent(UserCenter.this,Editactivity.class);
-                intent1.putExtra("nicheng","小卷");
-                startActivity(intent1);
+                intent1.putExtra(Editactivity.TEXT_ID,nicheng.getText());
+                startActivityForResult(intent1,1);
+            }
+        });
+        mail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2=new Intent(UserCenter.this,Editactivity.class);
+                intent2.putExtra(Editactivity.TEXT_ID,mail.getText());
+                startActivityForResult(intent2,2);
             }
         });
     }
@@ -61,7 +71,11 @@ public class UserCenter extends AppCompatActivity{
         ImageView image= (ImageView) findViewById(R.id.user_center_topimage);
         touxiang= (ImageView) findViewById(R.id.user_center_touxiang);
         nicheng= (Button) findViewById(R.id.user_center_nicheng);
+        mail= (Button) findViewById(R.id.user_center_mail);
 
+
+        nicheng.setText(preferences.getString("nicheng",null));
+        mail.setText(preferences.getString("mail",null));
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar!=null){
@@ -75,10 +89,36 @@ public class UserCenter extends AppCompatActivity{
     public boolean onOptionsItemSelected(MenuItem item){
         switch (item.getItemId()){
             case android.R.id.home:
+                Intent back=new Intent(UserCenter.this,MainActivity.class);
+                back.putExtra("nicheng",nicheng.getText().toString());
+                back.putExtra("touxiang",R.drawable.tx);
+                setResult(RESULT_OK,back);
                 finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        switch (requestCode){
+            case 1:
+                if (resultCode==RESULT_OK){
+                    String d=data.getStringExtra(Editactivity.TEXT_ID);
+                    editor.putString("nicheng",d).apply();
+                    nicheng.setText(d);
+                }
+                break;
+            case 2:
+                if (resultCode==RESULT_OK){
+                    String m=data.getStringExtra(Editactivity.TEXT_ID);
+                    editor.putString("mail",m).apply();
+                    mail.setText(m);
+                }
+                break;
+
+        }
+    }
+
 
 }

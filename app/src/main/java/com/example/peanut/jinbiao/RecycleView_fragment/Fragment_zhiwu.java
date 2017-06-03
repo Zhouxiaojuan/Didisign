@@ -47,7 +47,7 @@ public class Fragment_zhiwu extends Fragment{
         View view=inflater.inflate(R.layout.fragment_zhiwu,container,false);
 
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview_zhiwu);
-        GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),2);
+        GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
         imgadapter = new ImageAdapter(ImagesList);
         recyclerView.setAdapter(imgadapter);

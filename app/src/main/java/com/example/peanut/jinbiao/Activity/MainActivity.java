@@ -1,6 +1,9 @@
 package com.example.peanut.jinbiao.Activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.preference.PreferenceManager;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -15,6 +18,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.peanut.jinbiao.Pagers.Fragment_pager1;
@@ -34,36 +38,47 @@ public class MainActivity extends AppCompatActivity {
 
     private View navheadview;
 
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
+    private TextView userid;
+    private CircleImageView circleImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         replaceFragment(fragment_pager1);
+        preferences= PreferenceManager.getDefaultSharedPreferences(this);
+        editor=preferences.edit();
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar!=null){
             actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setHomeAsUpIndicator(R.drawable.icon_menu32_white);
+//            actionBar.setHomeAsUpIndicator(R.drawable.icon_menu32_white);
         }
-
-
         NavigationView navigationView= (NavigationView) findViewById(R.id.nav_view);
         drawerLayout= (DrawerLayout) findViewById(R.id.activity_main);
         navheadview=navigationView.inflateHeaderView(R.layout.nav_header);
-
-        CircleImageView circleImageView= (CircleImageView) navheadview.findViewById(R.id.user_image);
-
+        circleImageView= (CircleImageView) navheadview.findViewById(R.id.user_image);
+        circleImageView.setImageResource(preferences.getInt("touxiang",0));
+        userid= (TextView) navheadview.findViewById(R.id.user_id);
+        userid.setText(preferences.getString("nicheng","..."));
         circleImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent1=new Intent(MainActivity.this,UserCenter.class);
-                intent1.putExtra(UserCenter.IMAGE_top,R.drawable.tx);
-                startActivity(intent1);
+                startActivityForResult(intent1,1);
             }
         });
-
+        userid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(MainActivity.this,UserCenter.class);
+                startActivityForResult(intent1,1);
+            }
+        });
         //设置默认点击第一个
         navigationView.setCheckedItem(R.id.today);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -97,7 +112,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-
     public void replaceFragment(Fragment fragment){
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
@@ -108,7 +122,6 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.toolbar,menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item){
@@ -126,5 +139,22 @@ public class MainActivity extends AppCompatActivity {
 
     public Helper getHelper(){
         return ((Helper)getApplicationContext());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode,int resultCode,Intent data){
+        switch (requestCode){
+            case 1:
+                if (resultCode==RESULT_OK){
+                    String name=data.getStringExtra("nicheng");
+                    int touxiang=data.getIntExtra("touxiang",0);
+                    editor.putInt("touxiang",touxiang).apply();
+                    editor.putString("nicheng",name).apply();
+                    userid.setText(name);
+                    circleImageView.setImageResource(touxiang);
+                    Log.d("Mainactivity", "onActivityResult: "+name);
+                }
+                break;
+        }
     }
 }

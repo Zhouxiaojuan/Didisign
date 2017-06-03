@@ -47,7 +47,7 @@ public class Fragment_dongwu extends Fragment {
         View view=inflater.inflate(R.layout.fragment_dongwu,container,false);
 
         RecyclerView recyclerView= (RecyclerView) view.findViewById(R.id.recyclerview_dongwu);
-        GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),2);
+        GridLayoutManager layoutManager=new GridLayoutManager(getActivity(),3);
         recyclerView.setLayoutManager(layoutManager);
         imgadapter = new ImageAdapter(ImagesList);
         recyclerView.setAdapter(imgadapter);

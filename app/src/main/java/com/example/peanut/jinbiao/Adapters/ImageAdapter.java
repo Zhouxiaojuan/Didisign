@@ -39,7 +39,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
                 int position=holder.getAdapterPosition();
                 Images images=mImagelist.get(position);
                 Intent intent=new Intent(context,ImageRoom.class);
-                intent.putExtra(ImageRoom.IMAGE_NUM,images.getNum());
+//                intent.putExtra(ImageRoom.IMAGE_NUM,images.getNum());
                 intent.putExtra(ImageRoom.IMAGE_ID,images.getImgID());
                 context.startActivity(intent);
             }
@@ -51,7 +51,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     public void onBindViewHolder(ViewHolder holder, int position) {
         Images image=mImagelist.get(position);
         holder.imageView.setImageResource(image.getImgID());
-        holder.textView.setText(image.getNum());
+//        holder.textView.setText(image.getNum());
     }
 
     @Override
@@ -62,12 +62,12 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ViewHolder> 
     static class ViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         ImageView imageView;
-        TextView textView;
+//        TextView textView;
         public ViewHolder(View itemView) {
             super(itemView);
             cardView= (CardView) itemView;
             imageView= (ImageView) itemView.findViewById(R.id.image_main);
-            textView= (TextView) itemView.findViewById(R.id.image_num);
+//            textView= (TextView) itemView.findViewById(R.id.image_num);
         }
     }
 

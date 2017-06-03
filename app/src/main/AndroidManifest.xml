@@ -32,7 +32,8 @@
             android:name=".Activity.UserCenter"
             android:theme="@style/TransLucentTheme" />
         <activity android:name=".Activity.LabelingPage" />
-        <activity android:name=".Activity.Editactivity"></activity>
+        <activity android:name=".Activity.Editactivity"
+            android:windowSoftInputMode="stateVisible|adjustResize"></activity>
     </application>
 
 </manifest>

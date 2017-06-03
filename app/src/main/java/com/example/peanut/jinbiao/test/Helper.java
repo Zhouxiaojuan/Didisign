@@ -24,4 +24,14 @@ public class Helper extends Application{
         return isauto;
     }
 
+    private String userid;
+
+    public void setUserid(String name){
+        userid=name;
+    }
+
+    public String getUserid(){
+        return userid;
+    }
+
 }

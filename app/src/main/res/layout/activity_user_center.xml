@@ -101,6 +101,7 @@
                     android:gravity="center"
                     android:maxLength="8"
                     android:maxLines="1"
+                    android:clickable="true"
                     android:background="#0000"
                     android:textColor="#9c9c9c"/>
 
