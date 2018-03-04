@@ -28,6 +28,26 @@
                 android:fitsSystemWindows="true"
                 app:layout_collapseMode="parallax"/>
 
+            <Button
+                android:id="@+id/user_center_nicheng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="admin"
+                android:textAllCaps="false"
+                android:textSize="30dp"
+                android:background="@color/Touming"
+                android:layout_gravity="bottom"
+                android:layout_margin="50dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="积分:234"
+                android:textSize="15dp"
+                android:layout_gravity="bottom"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="55dp"/>
+
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_center_touxiang"
                 android:layout_width="70dp"
@@ -77,60 +97,6 @@
                     android:gravity="center"
                     android:background="#0000"
                     android:textColor="#9c9c9c"/>
-            </LinearLayout>
-            <View  android:layout_height="1px"
-                android:layout_width="match_parent"
-                android:background="#b9b9b9" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="昵称:"
-                    android:textColor="#000"
-                    android:gravity="center|left"/>
-                <Button
-                    android:id="@+id/user_center_nicheng"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:textAllCaps="false"
-                    android:gravity="center"
-                    android:maxLength="8"
-                    android:maxLines="1"
-                    android:clickable="true"
-                    android:background="#0000"
-                    android:textColor="#9c9c9c"/>
-
-            </LinearLayout>
-            <View  android:layout_height="1px"
-                android:layout_width="match_parent"
-                android:background="#b9b9b9" />
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:text="积分:"
-                    android:textColor="#000"
-                    android:gravity="center|left"/>
-
-                <Button
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="5"
-                    android:textAllCaps="false"
-                    android:gravity="center"
-                    android:background="#0000"
-                    android:textColor="#9c9c9c"
-                    android:id="@+id/user_center_jifen" />
-
             </LinearLayout>
             <View  android:layout_height="1px"
                 android:layout_width="match_parent"

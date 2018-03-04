@@ -23,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.peanut.jinbiao.Pagers.Fragment_pager1;
 import com.example.peanut.jinbiao.Pagers.Fragment_pager_2;
+import com.example.peanut.jinbiao.Pagers.Fragment_pager_todaytask;
 import com.example.peanut.jinbiao.R;
 import com.example.peanut.jinbiao.test.Helper;
 
@@ -35,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private Fragment_pager1 fragment_pager1=new Fragment_pager1();
 
     private Fragment_pager_2 fragmentPager2=new Fragment_pager_2();
+
+    private Fragment_pager_todaytask fragment_pager_todaytask=new Fragment_pager_todaytask();
 
     private View navheadview;
 
@@ -94,8 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         replaceFragment(fragmentPager2);
                         break;
                     case R.id.task:
-                        break;
-                    case R.id.settting:
+                        replaceFragment(fragment_pager_todaytask);
                         break;
                     case R.id.out:
                         Intent intent6 = new Intent(MainActivity.this, LoginPager.class);

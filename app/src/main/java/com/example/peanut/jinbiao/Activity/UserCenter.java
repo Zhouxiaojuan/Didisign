@@ -33,6 +33,7 @@ public class UserCenter extends AppCompatActivity{
 
     private Button nicheng;
     private Button mail;
+    private Button QQ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +62,14 @@ public class UserCenter extends AppCompatActivity{
                 startActivityForResult(intent2,2);
             }
         });
+        QQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3=new Intent(UserCenter.this,Editactivity.class);
+                intent3.putExtra(Editactivity.TEXT_ID,QQ.getText());
+                startActivityForResult(intent3,3);
+            }
+        });
     }
 
     private void init(){
@@ -72,10 +81,12 @@ public class UserCenter extends AppCompatActivity{
         touxiang= (ImageView) findViewById(R.id.user_center_touxiang);
         nicheng= (Button) findViewById(R.id.user_center_nicheng);
         mail= (Button) findViewById(R.id.user_center_mail);
+        QQ= (Button) findViewById(R.id.user_center_qq);
 
 
         nicheng.setText(preferences.getString("nicheng",null));
         mail.setText(preferences.getString("mail",null));
+        QQ.setText(preferences.getString("QQ",null));
         setSupportActionBar(toolbar);
         ActionBar actionBar=getSupportActionBar();
         if (actionBar!=null){
@@ -104,9 +115,9 @@ public class UserCenter extends AppCompatActivity{
         switch (requestCode){
             case 1:
                 if (resultCode==RESULT_OK){
-                    String d=data.getStringExtra(Editactivity.TEXT_ID);
-                    editor.putString("nicheng",d).apply();
-                    nicheng.setText(d);
+                    String nID=data.getStringExtra(Editactivity.TEXT_ID);
+                    editor.putString("nicheng",nID).apply();
+                    nicheng.setText(nID);
                 }
                 break;
             case 2:
@@ -114,6 +125,13 @@ public class UserCenter extends AppCompatActivity{
                     String m=data.getStringExtra(Editactivity.TEXT_ID);
                     editor.putString("mail",m).apply();
                     mail.setText(m);
+                }
+                break;
+            case 3:
+                if (resultCode==RESULT_OK){
+                    String qq=data.getStringExtra(Editactivity.TEXT_ID);
+                    editor.putString("QQ",qq).apply();
+                    QQ.setText(qq);
                 }
                 break;
 
